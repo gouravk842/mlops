@@ -19,10 +19,10 @@ test_set = test_datagen.flow_from_directory(
         class_mode='binary')
 a=model.fit(
         training_set,
-        steps_per_epoch=800,
-        epochs=2,
+        steps_per_epoch=8000,
+        epochs=25,
         validation_data=test_set,
-        validation_steps=100)
+        validation_steps=900)
 b=a.history['accuracy'][0]*100
 if b >=80:
         model.save('trained.h5')
